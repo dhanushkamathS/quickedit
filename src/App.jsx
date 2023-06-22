@@ -132,7 +132,7 @@ function App() {
 
       <div className=' text-3xl text-center text-white p-3' >
         <p>Quick Edit (For your immediate needs)</p>
-        {JSON.stringify(import.meta.env)}
+        <div className='text-xs'>{JSON.stringify(import.meta.env)}</div>
       </div>
 
       <div className="flex flex-row justify-center mb-2">

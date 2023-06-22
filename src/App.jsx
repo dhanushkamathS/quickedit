@@ -48,13 +48,13 @@ function App() {
   
     const options = {
         method: 'POST',
-        url: process.env.RAPID_API_URL,
+        url: process.env.REACT_APP_RAPID_API_URL,
         params: { base64_encoded: 'true', fields: '*'},
         headers: {
           'content-type': 'application/json',
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': process.env.RAPID_API_KEY,
-          'X-RapidAPI-Host':  process.env.RAPID_API_HOST
+          'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+          'X-RapidAPI-Host':  process.env.REACT_APP_RAPID_API_HOST
         },
       data: formData,
     };
@@ -84,11 +84,11 @@ function App() {
    const checkStatus = async (token) => {
     const options = {
       method: "GET",
-      url: process.env.RAPID_API_URL + "/" + token,
+      url: process.env.REACT_APP_RAPID_API_URL + "/" + token,
       params: { base64_encoded: "true", fields: "*" },
       headers: {
-        "X-RapidAPI-Host":  process.env.RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+        "X-RapidAPI-Host":  process.env.REACT_APP_RAPID_API_HOST,
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
       },
     };
     try {

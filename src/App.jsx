@@ -132,6 +132,9 @@ function App() {
 
       <div className=' text-3xl text-center text-white p-3' >
         <p>Quick Edit (For your immediate needs)</p>
+        {process.env.REACT_APP_RAPID_API_URL}
+        {process.env.REACT_APP_RAPID_API_HOST}
+        {process.env.REACT_APP_RAPID_API_KEY}
       </div>
 
       <div className="flex flex-row justify-center mb-2">

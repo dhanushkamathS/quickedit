@@ -48,13 +48,13 @@ function App() {
   
     const options = {
         method: 'POST',
-        url: process.env.REACT_APP_RAPID_API_URL,
+        url: import.meta.env.VITE_RAPID_API_URL,
         params: { base64_encoded: 'true', fields: '*'},
         headers: {
           'content-type': 'application/json',
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-          'X-RapidAPI-Host':  process.env.REACT_APP_RAPID_API_HOST
+          'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
+          'X-RapidAPI-Host': import.meta.env.VITE_RAPID_API_HOST
         },
       data: formData,
     };
@@ -84,11 +84,11 @@ function App() {
    const checkStatus = async (token) => {
     const options = {
       method: "GET",
-      url: process.env.REACT_APP_RAPID_API_URL + "/" + token,
+      url:import.meta.env.VITE_RAPID_API_URL + "/" + token,
       params: { base64_encoded: "true", fields: "*" },
       headers: {
-        "X-RapidAPI-Host":  process.env.REACT_APP_RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+        "X-RapidAPI-Host": import.meta.env.VITE_RAPID_API_HOST,
+        "X-RapidAPI-Key": import.meta.env.VITE_RAPID_API_KEY,
       },
     };
     try {
@@ -132,9 +132,6 @@ function App() {
 
       <div className=' text-3xl text-center text-white p-3' >
         <p>Quick Edit (For your immediate needs)</p>
-        {process.env.REACT_APP_RAPID_API_URL}
-        {process.env.REACT_APP_RAPID_API_HOST}
-        {process.env.REACT_APP_RAPID_API_KEY}
       </div>
 
       <div className="flex flex-row justify-center mb-2">
